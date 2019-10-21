@@ -11,11 +11,19 @@ services:
     build: IMOMaritimeSingleWindow/Server
     ports:
       - "5000:5000"
+    volumes:
+      - ./conf/appsettings.json:/app/appsettings.json
     networks:
       - front
       - back
   db:
     image: postgres:11-alpine
+    environment:
+      POSTGRES_USER: imo
+      POSTGRES_DB: imomsw
+      POSTGRES_PASSWORD: dik2dkDZXEt1GapxGwKVuVaZa5m5bS1oJWoF2stH
+    volumes:
+      - ./dbdata:/var/lib/postgresql/data
     networks:
       - back
 
