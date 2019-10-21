@@ -19,11 +19,12 @@ services:
   db:
     image: postgres:11-alpine
     environment:
-      POSTGRES_USER: imo
-      POSTGRES_DB: imomsw
+      POSTGRES_USER: postgres
+      # POSTGRES_DB: imomsw
       POSTGRES_PASSWORD: dik2dkDZXEt1GapxGwKVuVaZa5m5bS1oJWoF2stH
     volumes:
       - ./dbdata:/var/lib/postgresql/data
+      - ./IMOMaritimeSingleWindow/Server/SqlScripts/Create_and_populate_DB.sql:/docker-entrypoint-initdb.d/Create_and_populate_DB.sql
     networks:
       - back
 
