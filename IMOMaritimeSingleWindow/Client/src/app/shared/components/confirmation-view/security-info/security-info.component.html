@@ -4,7 +4,7 @@
       <ng-container *ngIf="!isLoading && securityDelivered">
 
         <div style="float: left; width: 33%">
-          <span style="font-size: 150%; text-decoration: underline;">Security Details</span>
+          <span style="font-size: 150%; text-decoration: underline;">Detalles de seguridad</span>
           <table>
             <tr>
               <td>
@@ -13,43 +13,43 @@
             </tr>
             <tr>
               <td>
-                Valid Ship Security Plan (SSP) on board: {{securityDetails.validSSP}}
+                Plan de protección del buque (SSP) válido a bordo: {{securityDetails.validSSP}}
               </td>
             </tr>
           </table>
         </div>
         <div style="float: left; width: 33%">
-          <span style="font-size: 150%; text-decoration: underline;">International Ship Security Certificate</span>
+          <span style="font-size: 150%; text-decoration: underline;">Certificado internacional de protección del buque</span>
           <table>
             <tr>
               <td>
-                Certificate Number: {{issc.certificateNumber}}
+                Número certificado: {{issc.certificateNumber}}
               </td>
               <td>
-                Expiry Date: {{issc.expiryDate}}
+                Fecha de caducidad: {{issc.expiryDate}}
               </td>
             </tr>
             <tr>
               <td>
-                Issuer Type: {{issc.issuerType}}
+                Tipo de emisor: {{issc.issuerType}}
               </td>
               <td>
-                Issued By: {{issc.issuedBy}}
+                Emitido por: {{issc.issuedBy}}
               </td>
             </tr>
           </table>
         </div>
         <div style="float: left; width: 33%">
-          <span style="font-size: 150%; text-decoration: underline;">Company Security Officer</span>
+          <span style="font-size: 150%; text-decoration: underline;">Oficial de seguridad de la empresa</span>
           <table>
             <tr>
               <td>
-                Full Name: {{cso.fullName}}
+                Nombre completo: {{cso.fullName}}
               </td>
             </tr>
             <tr>
               <td>
-                Phone Number: {{cso.phoneNumber}}
+                Número de teléfono: {{cso.phoneNumber}}
               </td>
               <td>
                 Email: {{cso.email}}

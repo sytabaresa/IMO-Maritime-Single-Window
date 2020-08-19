@@ -6,8 +6,8 @@
           <img src="assets/images/flags/ag.png" height="80px">
         </div>
         <div class="d-table-cell px-3">
-          <h2>IMO Maritime Single Window</h2>
-          <h6>Version 1.1. Deployed: 08.03.2019
+          <h2>WINDU</h2>
+          <h6>Ventanilla Maritima
           </h6>
         </div>
       </div>
@@ -15,27 +15,27 @@
 
     <form #f="ngForm" novalidate (ngSubmit)="login(f)">
       <div class="form-group row">
-        <label for="email" class="col-form-label-sm no-wrap col-sm-3 col-md-2 col-lg-2">Email address:</label>
+        <label for="email" class="col-form-label-sm no-wrap col-sm-3 col-md-2 col-lg-2">Dirección Correo:</label>
         <div class="col my-auto">
-          <input id="email" name="userName" type="email" class="form-control form-control-sm" placeholder="Enter email address" [(ngModel)]="credentials.userName"
+          <input id="email" name="userName" type="email" class="form-control form-control-sm" placeholder="Introduce dirección de correo" [(ngModel)]="credentials.userName"
             #email="ngModel" autocomplete="username" tmFocus required>
         </div>
       </div>
 
       <div class="form-group row">
-        <label for="password" class="col-form-label-sm no-wrap col-sm-3 col-md-2 col-lg-2">Password:</label>
+        <label for="password" class="col-form-label-sm no-wrap col-sm-3 col-md-2 col-lg-2">Contraseña:</label>
         <div class="col my-auto">
-          <input id="password" name="password" type="password" #pw class="form-control form-control-sm" placeholder="Enter password"
+          <input id="password" name="password" type="password" #pw class="form-control form-control-sm" placeholder="Introduce tu contraseña"
             [(ngModel)]="credentials.password" autocomplete="current-password" required>
         </div>
       </div>
 
       <div class="form-group">
-        <button type="submit" (click)="pw.select()" class="btn btn-light" [disabled]="f.invalid || isRequesting">SIGN IN</button>
+        <button type="submit" (click)="pw.select()" class="btn btn-light" [disabled]="f.invalid || isRequesting">ENTRAR</button>
       </div>
 
       <nav>
-        <a class="btn btn-light" routerLink="../ForgotPassword" routerLinkActive="active">Forgot password?</a>
+        <a class="btn btn-light" routerLink="../ForgotPassword" routerLinkActive="active">¿Has olvidado tu contraseña?</a>
       </nav>
 
       <div *ngIf="errors" class="alert alert-danger" role="alert">

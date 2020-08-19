@@ -1,6 +1,6 @@
 <app-ssn-card header="Contact Information" icon="contact.png">
   <div class="text-center">
-    <label for="contact_info">Select contact information</label>
+    <label for="contact_info">Seleccionar información de contacto</label>
   </div>
   <ng-select id="contact_info" [items]="contactList" [multiple]="true" [closeOnSelect]="true" bindLabel="contactMedium.contactMediumType"
     placeholder="Select contact mediums" [ngModel]="selectedContactModelList" (add)="onAdd($event)" (remove)="onRemove($event)" (clear)="onClear()"></ng-select>
@@ -20,7 +20,7 @@
           <div class="input-group-text bg-ssn text-white">
             <input type="radio" id="{{ i }}" name="preferredRadios" [value]="true" [(ngModel)]="selectedContactModelList[i].isPreferred"
               (ngModelChange)="preferredSet(selectedContactModelList[i])" [checked]="selectedContactModelList[i].isPreferred">
-            <label class="form-check-label" for="{{ i }}">Preferred</label>
+            <label class="form-check-label" for="{{ i }}">Privilegiado</label>
           </div>
         </div>
       </div>

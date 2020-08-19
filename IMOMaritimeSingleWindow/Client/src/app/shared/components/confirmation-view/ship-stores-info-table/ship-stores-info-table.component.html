@@ -5,7 +5,7 @@
         <tr>
           <td class="no-wrap">
             <tr>
-              <small>No. of Ship Stores</small>
+              <small>Número de provisiones del barcos</small>
             </tr>
             <tr>
               {{ numberOfShipStores }}
@@ -13,7 +13,7 @@
           </td>
           <td class="no-wrap">
             <tr>
-              <small>Total Registered Weight</small>
+              <small>Peso total registrado</small>
             </tr>
             <tr>
               {{ totalWeight }} kg
@@ -21,7 +21,7 @@
           </td>
           <td class="no-wrap">
             <tr>
-              <small>Total Registered Volume</small>
+              <small>Volumen total registrado</small>
             </tr>
             <tr>
               {{ totalVolume }} liter
@@ -29,7 +29,7 @@
           </td>
           <td class="no-wrap">
             <tr>
-              <small>Total Registered Units</small>
+              <small>Total de unidades registradas</small>
             </tr>
             <tr>
               {{ totalUnits }} u
@@ -39,9 +39,9 @@
       </tbody>
       <div *ngIf="numberOfShipStores === 0" class="text-center my-3">
         <img *ngIf="iconPath" src="{{iconPath}}warning.png" height="24px" />
-        <span class="no-wrap">Ship stores information</span>
-        <span class="no-wrap">is marked for delivery,</span>
-        <span class="no-wrap">but no information is provided.</span>
+        <span class="no-wrap">Información de suministros del barco</span>
+        <span class="no-wrap">está marcado para entrega,</span>
+        <span class="no-wrap">pero no se proporciona información.</span>
       </div>
 
     </app-table-card>

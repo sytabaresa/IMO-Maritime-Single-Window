@@ -14,33 +14,33 @@
 
 <ng-template #deleteModal let-close="close()">
   <div class="modal-header">
-    <h4 class="modal-title">Confirm Deletion</h4>
+    <h4 class="modal-title">Confirmar la eliminación</h4>
     <button type="button" class="close" aria-label="Close" (click)="close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
     <div [ngSwitch]="selectedForm">
-      <span *ngSwitchCase="formNames.SHIP_STORES">Delete ship store?</span>
-      <span *ngSwitchCase="formNames.CARGO">Delete cargo item?</span>
-      <span *ngSwitchCase="formNames.SECURITY">Delete entry?</span>
+      <span *ngSwitchCase="formNames.SHIP_STORES">¿Eliminar tienda de envío?</span>
+      <span *ngSwitchCase="formNames.CARGO">¿Eliminar artículo de carga?</span>
+      <span *ngSwitchCase="formNames.SECURITY">¿Eliminar la entrada?</span>
     </div>
   </div>
   <div class="modal-footer" [ngSwitch]="selectedForm">
     <button *ngSwitchCase="formNames.SHIP_STORES" class="btn btn-danger" (click)="deleteItem(); close">
       <img src="assets/images/icons/128x128/white/cancel.png" height="24px">
-      <span>Delete Ship Store</span>
+      <span>Eliminar tienda del barco</span>
     </button>
     <button *ngSwitchCase="formNames.CARGO" class="btn btn-danger" (click)="deleteItem(); close">
       <img src="assets/images/icons/128x128/white/trash.png" height="24px">
-      <span> Delete</span>
+      <span> Eliminar</span>
     </button>
     <button *ngSwitchCase="formNames.SECURITY" class="btn btn-danger" (click)="deleteItem(); close">
       <img src="assets/images/icons/128x128/white/trash.png" height="24px">
-      <span> Delete</span>
+      <span> Eliminar</span>
     </button>
     <button type="button" class="btn btn-ssn" (click)="close">
-      <span>Exit</span>
+      <span>Salir</span>
     </button>
   </div>
 </ng-template>

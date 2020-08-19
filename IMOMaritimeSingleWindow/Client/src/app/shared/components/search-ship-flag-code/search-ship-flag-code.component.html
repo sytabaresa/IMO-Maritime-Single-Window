@@ -1,11 +1,11 @@
 <ng-template #rt let-r="result" let-t="term">
   <img *ngIf="r.country.twoCharCode" src="assets/images/flags/{{ r.country.twoCharCode | lowercase }}.png" height="16px" />
-  <strong *ngIf="r.country.threeCharCode">Code: </strong> {{ r.country.threeCharCode }}
-  <strong *ngIf="r.country.name">Country: </strong> {{ r.country.name }}
+  <strong *ngIf="r.country.threeCharCode">Código: </strong> {{ r.country.threeCharCode }}
+  <strong *ngIf="r.country.name">País: </strong> {{ r.country.name }}
 </ng-template>
 
 <div class="text-center">
-  <label for="search-shipFlagCode">Search using flag code or name of country</label>
+  <label for="search-shipFlagCode">Buscar usando el código de la bandera o el nombre del país</label>
   <div class="row justify-content-end">
     <div class="col-sm-10 col-md-8">
       <div class="input-group">
@@ -22,11 +22,11 @@
     <div class="col-2">
       <div *ngIf="searching">
         <img class="mx-auto" src="assets/images/animations/flag.gif" height="32px">
-        <p>Searching</p>
+        <p>Buscando</p>
       </div>
       <div *ngIf="searchFailed">
         <img class="mx-auto" src="assets/images/icons/128x128/cancel.png" height="32px">
-        <p>No results</p>
+        <p>No hay resultados</p>
       </div>
     </div>
   </div>

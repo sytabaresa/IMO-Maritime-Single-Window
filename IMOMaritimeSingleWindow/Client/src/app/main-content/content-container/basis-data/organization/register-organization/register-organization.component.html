@@ -8,19 +8,19 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="organization_type_select">Organization Type</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="organization_type_select">Tipo de organización</label>
                   <ng-select id="organization_type_select" name="organization_type_select" [items]="organizationTypeList" [multiple]="false"
                   [closeOnSelect]="true" bindLabel="name" placeholder="Select Organization Type" [(ngModel)]="selectedOrganizationType"
                   (change)="selectOrganizationType($event)">
                   </ng-select>
-                  
+
                 </div>
               </div>
             </div>
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="organization_name">Organization Name</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="organization_name">Nombre de la Organización</label>
                   <input [(ngModel)]="organizationModel.name" name="organizationName" type="text" class="form-control form-control-sm"
                     id="organization_name" placeholder="Enter organization name" />
                 </div>
@@ -32,7 +32,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="organization_no">Organization Number</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="organization_no">Número de organización</label>
                   <input [(ngModel)]="organizationModel.organizationNo" name="organizationNo" type="text" class="form-control form-control-sm"
                     id="organization_no" placeholder="Enter organization number">
                 </div>
@@ -41,7 +41,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="description">Description</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="description">Descripción</label>
                   <input [(ngModel)]="organizationModel.description" name="description" type="text" class="form-control form-control-sm"
                     id="description" placeholder="Enter description">
                 </div>
@@ -59,9 +59,9 @@
       <app-ssn-card header='{{ confirmHeader }}' icon="checkmark.png">
         <div *ngIf="!organizationTypeSelected || !organizationModel.name || !organizationModel.organizationNo" class="text-center">
           <div class="mb-3">
-            <p *ngIf="!organizationTypeSelected" class="no-wrap mb-0">No organization type selected.</p>
-            <p *ngIf="!organizationModel.name" class="no-wrap mb-0">Organization name not set.</p>
-            <p *ngIf="!organizationModel.organizationNo" class="no-wrap mb-0">Organization number not set.</p>
+            <p *ngIf="!organizationTypeSelected" class="no-wrap mb-0">No se seleccionó ningún tipo de organización.</p>
+            <p *ngIf="!organizationModel.name" class="no-wrap mb-0">No se estableció el nombre de la organización.</p>
+            <p *ngIf="!organizationModel.organizationNo" class="no-wrap mb-0">Número de organización no establecido.</p>
           </div>
           <button class="btn btn-ssn" disabled>
             <img src="assets/images/icons/128x128/white/checkmark.png" height="24px" /> {{ confirmButtonTitle }}</button>

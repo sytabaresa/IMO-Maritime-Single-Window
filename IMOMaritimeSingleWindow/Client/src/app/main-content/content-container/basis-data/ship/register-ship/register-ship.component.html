@@ -7,7 +7,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_name">Ship Name</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_name">Nombre del barco</label>
                   <input [(ngModel)]="shipModel.name" (ngModelChange)="touchData()" name="shipName" type="text" class="form-control form-control-sm"
                     id="ship_name" placeholder="Enter ship name" />
                 </div>
@@ -16,7 +16,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="call_sign">Call Sign</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="call_sign">Señal de llamada</label>
                   <input [(ngModel)]="shipModel.callSign" (ngModelChange)="touchData()" name="callSign" type="text"
                     class="form-control form-control-sm" id="call_sign" placeholder="Enter call sign" minlength="4"
                     maxlength="8" #callSign="ngModel">
@@ -24,7 +24,7 @@
               </div>
               <div *ngIf="!callSign.valid" class="alert alert-danger">
                 <li *ngIf="callSign.hasError('minlength')">
-                  <small>Callsign number must be between 4 and 8 characters.</small>
+                  <small>El número de indicativo debe tener entre 4 y 8 caracteres.</small>
                 </li>
               </div>
             </div>
@@ -34,7 +34,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="imo_no">IMO Number</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="imo_no">Numero IMO</label>
                   <input [(ngModel)]="shipModel.imoNo" (ngModelChange)="validImoNumber()" name="imoNo" type="number" class="form-control form-control-sm"
                     id="imo_no" placeholder="Enter IMO number" #imoNo="ngModel" numberValidator integerValidator
                     positiveNumberValidator />
@@ -42,13 +42,13 @@
               </div>
               <div *ngIf="!imoNo.valid || !imoValid" class="alert alert-danger">
                 <li *ngIf="imoNo.hasError('notNumberError')">
-                  <small>IMO number must be a valid number.</small>
+                  <small>El número IMO debe ser un número válido.</small>
                 </li>
                 <li *ngIf="imoNo.hasError('notIntegerError')">
-                  <small>IMO number must be an integer.</small>
+                  <small>El número IMO debe ser un número entero.</small>
                 </li>
                 <li *ngIf="imoNo.hasError('notPositiveNumberError')">
-                  <small>IMO number must be a positive number.</small>
+                  <small>El número IMO debe ser un número positivo.</small>
                 </li>
                 <li *ngIf="!imoValid">
                   <small>{{imoErrorString}}</small>
@@ -59,7 +59,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="mmsi_no">MMSI Number</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="mmsi_no">Numero MMSI</label>
                   <input [(ngModel)]="shipModel.mmsiNo" (ngModelChange)="validMmsiNumber()" name="mmsiNo" type="number" class="form-control form-control-sm"
                     id="mmsi_no" placeholder="Enter MMSI number" #mmsiNo="ngModel" integerValidator minlength="9"
                     maxlength="9" positiveNumberValidator />
@@ -67,16 +67,16 @@
               </div>
               <div *ngIf="!mmsiNo.valid || !mmsiValid" class="alert alert-danger">
                 <li *ngIf="mmsiNo.hasError('notIntegerError')">
-                  <small>MMSI number must be an integer.</small>
+                  <small>El número MMSI debe ser un número entero.</small>
                 </li>
                 <li *ngIf="mmsiNo.hasError('notPositiveNumberError')">
-                  <small>MMSI number must be a positive number.</small>
+                  <small>El número MMSI debe ser un número positivo.</small>
                 </li>
                 <li *ngIf="mmsiNo.hasError('minlength')">
-                    <small>MMSI Number must be 9 numbers.</small>
+                    <small>El número MMSI debe tener 9 números.</small>
                 </li>
                 <li *ngIf="mmsiNo.hasError('maxlength')">
-                    <small>MMSI Number must be 9 numbers.</small>
+                    <small>El número MMSI debe tener 9 números.</small>
                 </li>
                 <li *ngIf="!mmsiValid">
                   <small>{{mmsiErrorString}}</small>
@@ -95,7 +95,7 @@
             <div class="col-md-6 col-lg-6" *ngIf="!shipTypeSelected">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_type_select">Ship Type</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_type_select">Tipo de barco</label>
                   <ng-select id="ship_type_select" name="ship_type_select" [items]="shipTypeList" [multiple]="false"
                     [closeOnSelect]="true" bindLabel="name" placeholder="Select ship type" [(ngModel)]="selectedShipType"
                     (change)="selectShipType($event)"></ng-select>
@@ -105,7 +105,7 @@
             <div class="col-md-6 col-lg-6" *ngIf="shipTypeSelected">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_type">Ship Type</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_type">Tipo de barco</label>
                   <div class="input-group">
                     <input id="ship_type" name="ship_type" type="text" class="form-control form-control-sm" [ngModel]="selectedShipType.name"
                       disabled="true" />
@@ -121,7 +121,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="year_of_build">Year of Build</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="year_of_build">Año de construcción</label>
                   <input [(ngModel)]="shipModel.yearOfBuild" (ngModelChange)="touchData()" name="yearOfBuild" type="number"
                     class="form-control form-control-sm" id="year_of_build" placeholder="Enter year of build"
                     #yearOfBuild="ngModel" numberValidator integerValidator positiveNumberValidator />
@@ -129,13 +129,13 @@
               </div>
               <div *ngIf="!yearOfBuild.valid" class="alert alert-danger">
                 <li *ngIf="yearOfBuild.hasError('notNumberError')">
-                  <small>Year of build must be a valid number.</small>
+                  <small>El año de construcción debe ser un número válido.</small>
                 </li>
                 <li *ngIf="yearOfBuild.hasError('notIntegerError')">
-                  <small>Year of build must be an integer.</small>
+                  <small>El año de construcción debe ser un número entero.</small>
                 </li>
                 <li *ngIf="yearOfBuild.hasError('notPositiveNumberError')">
-                  <small>Year of build must be a positive number.</small>
+                  <small>El año de construcción debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
@@ -145,7 +145,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_length">Length</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_length">Tamaño</label>
                   <div class="input-group">
                     <div ngbDropdown class="input-group-prepend">
                       <button class="btn btn-sm btn-ssn" id="lengthTypeDropdown" ngbDropdownToggle> {{
@@ -164,10 +164,10 @@
               </div>
               <div *ngIf="!shipLength.valid && lengthTypeSelected" class="alert alert-danger">
                 <li *ngIf="shipLength.hasError('notNumberError')">
-                  <small>Ship length must be a valid number.</small>
+                  <small>El tamaño del barco debe ser un número valido.</small>
                 </li>
                 <li *ngIf="shipLength.hasError('notPositiveNumberError')">
-                  <small>Ship length must be a positive number.</small>
+                  <small>El tamaño del barco debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
@@ -175,7 +175,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_breadth">Breadth</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_breadth">Ancho</label>
                   <div class="input-group">
                     <div ngbDropdown class="input-group-prepend">
                       <button class="btn btn-sm btn-ssn" id="breadthTypeDropdown" ngbDropdownToggle> {{
@@ -194,10 +194,10 @@
               </div>
               <div *ngIf="!shipBreadth.valid && breadthTypeSelected" class="alert alert-danger">
                 <li *ngIf="shipBreadth.hasError('notNumberError')">
-                  <small>Ship breadth must be a valid number.</small>
+                  <small>El ancho del barco debe ser un número válido.</small>
                 </li>
                 <li *ngIf="shipBreadth.hasError('notPositiveNumberError')">
-                  <small>Ship breadth must be a positive number.</small>
+                  <small>El ancho del barco debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
@@ -207,7 +207,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_power">Power</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_power">Potencia</label>
                   <div class="input-group">
                     <div ngbDropdown class="input-group-prepend">
                       <button class="btn btn-sm btn-ssn" id="powerTypeDropdown" ngbDropdownToggle> {{
@@ -226,20 +226,20 @@
               </div>
               <div *ngIf="!shipPower.valid && powerTypeSelected" class="alert alert-danger">
                 <li *ngIf="shipPower.hasError('notNumberError')">
-                  <small>Ship power must be a valid number.</small>
+                  <small>La potencia del barco debe ser un número válido.</small>
                 </li>
                 <li *ngIf="shipPower.hasError('notIntegerError')">
-                  <small>Ship power must be an integer.</small>
+                  <small>La potencia del barco debe ser un número entero.</small>
                 </li>
                 <li *ngIf="shipPower.hasError('notPositiveNumberError')">
-                  <small>Ship power must be a positive number.</small>
+                  <small>La potencia del barco debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
             <div class="col-md-1 col-lg-1">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_status_dropdown">Ship Status</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_status_dropdown">Estado del barco</label>
                   <div ngbDropdown>
                     <button class="btn btn-sm btn-ssn" id="ship_status_dropdown" ngbDropdownToggle> {{
                       shipStatusDropdownString
@@ -256,7 +256,7 @@
             <div class="col-md-1 col-lg-1">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="hull_type_dropdown">Hull Type</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="hull_type_dropdown">Tipo de casco</label>
                   <div ngbDropdown>
                     <button class="btn btn-sm btn-ssn" id="hull_type_dropdown" ngbDropdownToggle> {{
                       hullTypeDropdownString
@@ -278,7 +278,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_height">Height</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_height">Altura</label>
                   <input [(ngModel)]="shipModel.height" (ngModelChange)="touchData()" #shipHeight="ngModel"
                     numberValidator positiveNumberValidator name="height" type="number" class="form-control form-control-sm"
                     id="height" placeholder="Enter ship height" />
@@ -286,10 +286,10 @@
               </div>
               <div *ngIf="!shipHeight.valid" class="alert alert-danger">
                 <li *ngIf="shipHeight.hasError('notNumberError')">
-                  <small>Ship height must be a valid number.</small>
+                  <small>La altura del barco debe ser un número válido.</small>
                 </li>
                 <li *ngIf="shipHeight.hasError('notPositiveNumberError')">
-                  <small>Ship height must be a positive number.</small>
+                  <small>La altura del barco debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
@@ -297,7 +297,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0" for="ship_draught">Draught</label>
+                  <label class="col-form-label-sm no-wrap mb-0" for="ship_draught">Calado</label>
                   <input [(ngModel)]="shipModel.draught" (ngModelChange)="touchData()" name="draught" type="number"
                     class="form-control form-control-sm" id="ship_draught" placeholder="Enter ship draught"
                     #shipDraught="ngModel" numberValidator positiveNumberValidator />
@@ -305,10 +305,10 @@
               </div>
               <div *ngIf="!shipDraught.valid" class="alert alert-danger">
                 <li *ngIf="shipDraught.hasError('notNumberError')">
-                  <small>Ship draught must be a valid number.</small>
+                  <small>El calado del barco debe ser un número válido.</small>
                 </li>
                 <li *ngIf="shipDraught.hasError('notPositiveNumberError')">
-                  <small>Ship draught must be a positive number.</small>
+                  <small>El calado del barco debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
@@ -318,7 +318,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0">Gross Tonnage</label>
+                  <label class="col-form-label-sm no-wrap mb-0">Arqueo bruto</label>
                   <input [(ngModel)]="shipModel.grossTonnage" (ngModelChange)="touchData()" name="grossTonnage" type="number"
                     class="form-control form-control-sm" id="gross_tonnage" placeholder="Enter gross tonnage"
                     #grossTonnage="ngModel" numberValidator integerValidator positiveNumberValidator />
@@ -326,13 +326,13 @@
               </div>
               <div *ngIf="!grossTonnage.valid" class="alert alert-danger">
                 <li *ngIf="grossTonnage.hasError('notNumberError')">
-                  <small>Gross tonnage must be a valid number.</small>
+                  <small>El Arqueo bruto debe ser un número válido.</small>
                 </li>
                 <li *ngIf="grossTonnage.hasError('notIntegerError')">
-                  <small>Gross tonnage must be an integer.</small>
+                  <small>El Arqueo bruto debe ser un número entero.</small>
                 </li>
                 <li *ngIf="grossTonnage.hasError('notPositiveNumberError')">
-                  <small>Gross tonnage must be a positive number.</small>
+                  <small>El Arqueo bruto debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
@@ -340,7 +340,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0">Deadweight Tonnage</label>
+                  <label class="col-form-label-sm no-wrap mb-0">Tonelaje de peso muerto</label>
                   <input [(ngModel)]="shipModel.deadweightTonnage" (ngModelChange)="touchData()" name="deadweightTonnage"
                     type="number" class="form-control form-control-sm" id="deadweight_tonnage" placeholder="Enter deadweight tonnage"
                     #dwt="ngModel" numberValidator integerValidator positiveNumberValidator />
@@ -348,13 +348,13 @@
               </div>
               <div *ngIf="!dwt.valid" class="alert alert-danger">
                 <li *ngIf="dwt.hasError('notNumberError')">
-                  <small>Deadweight tonnage must be a valid number.</small>
+                  <small>El tonelaje de peso muerto debe ser un número válido.</small>
                 </li>
                 <li *ngIf="dwt.hasError('notIntegerError')">
-                  <small>Deadweight tonnage must be an integer.</small>
+                  <small>El tonelaje de peso muerto debe ser un número entero.</small>
                 </li>
                 <li *ngIf="dwt.hasError('notPositiveNumberError')">
-                  <small>Deadweight tonnage must be a positive number.</small>
+                  <small>El tonelaje de peso muerto debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
@@ -364,7 +364,7 @@
             <div class="col-md-6 col-lg-6">
               <div class="form-group row">
                 <div class="col">
-                  <label class="col-form-label-sm no-wrap mb-0">Net Tonnage</label>
+                  <label class="col-form-label-sm no-wrap mb-0">Arqueo neto</label>
                   <input [(ngModel)]="shipModel.netTonnage" (ngModelChange)="touchData()" name="netTonnage" type="number"
                     class="form-control form-control-sm" id="net_tonnage" placeholder="Enter net tonnage" #netTonnage="ngModel"
                     numberValidator integerValidator positiveNumberValidator />
@@ -372,39 +372,39 @@
               </div>
               <div *ngIf="!netTonnage.valid" class="alert alert-danger">
                 <li *ngIf="netTonnage.hasError('notNumberError')">
-                  <small>Net tonnage must be a valid number.</small>
+                  <small>El Arqueo neto debe ser un número válido.</small>
                 </li>
                 <li *ngIf="netTonnage.hasError('notIntegerError')">
-                  <small>Net tonnage must be an integer.</small>
+                  <small>El Arqueo neto debe ser un número entero.</small>
                 </li>
                 <li *ngIf="netTonnage.hasError('notPositiveNumberError')">
-                  <small>Net tonnage must be a positive number.</small>
+                  <small>El Arqueo neto debe ser un número positivo.</small>
                 </li>
               </div>
             </div>
           </div>
           <div class="form-group">
-            <label class="col-form-label-sm no-wrap mb-0" for="has_side_thrusters">Side thrusters</label>
+            <label class="col-form-label-sm no-wrap mb-0" for="has_side_thrusters">Propulsores laterales</label>
             <div class="card pt-2" id="has_side_thrusters">
               <div class="checkbox row">
                 <div class="col ml-2">
                   <label class="col-form-label-sm no-wrap mb-0">
                     <input [(ngModel)]="shipModel.hasSideThrustersBack" (ngModelChange)="touchData()" name="hasSideThrustersBack"
-                      type="checkbox" value=""> Back side thrusters</label>
+                      type="checkbox" value=""> Propulsores laterales trasero</label>
                 </div>
               </div>
               <div class="checkbox row">
                 <div class="col ml-2">
                   <label class="col-form-label-sm no-wrap mb-0">
                     <input [(ngModel)]="shipModel.hasSideThrustersFront" (ngModelChange)="touchData()" name="hasSideThrustersFront"
-                      type="checkbox" value=""> Front side thrusters</label>
+                      type="checkbox" value=""> Propulsores laterales delanteros</label>
                 </div>
               </div>
               <div class="checkbox row">
                 <div class="col ml-2">
                   <label class="col-form-label-sm no-wrap mb-0">
                     <input [(ngModel)]="shipModel.hasSideThrusters" (ngModelChange)="touchData()" name="hasSideThrusters"
-                      type="checkbox" value=""> Side thrusters
+                      type="checkbox" value=""> Propulsores laterales
                   </label>
                 </div>
               </div>
@@ -412,7 +412,7 @@
           </div>
 
           <div class="form-group">
-            <label class="col-form-label-sm no-wrap mb-0" for="remark">Remark</label>
+            <label class="col-form-label-sm no-wrap mb-0" for="remark">Observación</label>
             <textarea [(ngModel)]="shipModel.remark" (ngModelChange)="touchData()" name="remark" class="form-control form-control-sm"
               rows="4" id="remark"></textarea>
           </div>
@@ -433,7 +433,7 @@
             <app-ssn-table [entryData]=shipFlagCodeProperties></app-ssn-table>
           </div>
           <button class="btn btn-ssn" (click)="deselectShipFlagCode()">
-            <img src="assets/images/icons/128x128/white/cancel.png" height="24px" /> Clear selection</button>
+            <img src="assets/images/icons/128x128/white/cancel.png" height="24px" /> Borrar selección</button>
         </div>
       </app-ssn-card>
     </div>
@@ -457,7 +457,7 @@
             <app-ssn-table [entryData]=organizationProperties></app-ssn-table>
           </div>
           <button class="btn btn-ssn" (click)="deselectOrganization()">
-            <img src="assets/images/icons/128x128/white/cancel.png" height="24px" /> Clear selection</button>
+            <img src="assets/images/icons/128x128/white/cancel.png" height="24px" /> Borrar selección</button>
         </div>
       </app-ssn-card>
     </div>
@@ -481,30 +481,30 @@
                         && organizationSelected && certificateSelected && shipStatusSelected)">
           <div *ngIf="!form.valid" class="text-center">
             <div class="alert alert-danger">
-              There are errors in the form that needs to be resolved.
+              Hay errores en el formulario que deben resolverse.
             </div>
           </div>
           <div class="mb-3">
-            <p class="no-wrap mb-0" *ngIf="!shipModel.name">Ship name not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.callSign">Call sign not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.imoNo">IMO number not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!imoValid">IMO number not valid.</p>
-            <p class="no-wrap mb-0" *ngIf="!mmsiValid">MMSI number not valid.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipTypeSelected">Ship type not selected.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.yearOfBuild">Year of build not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.length || !lengthTypeSelected">Ship length not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.breadth || !breadthTypeSelected">Ship breadth not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.power || !powerTypeSelected">Ship power not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!hullTypeSelected">Hull type not selected.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipStatusSelected">Ship status not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.height">Ship height not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.draught">Ship draught not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.grossTonnage">Gross tonnage not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipModel.deadweightTonnage">Deadweight tonnage not set.</p>
-            <p class="no-wrap mb-0" *ngIf="!shipFlagCodeSelected">Flag code not selected.</p>
-            <p class="no-wrap mb-0" *ngIf="!contactSelected">At least one contact medium must be provided.</p>
-            <p class="no-wrap mb-0" *ngIf="!organizationSelected">Organization not selected.</p>
-            <p class="no-wrap mb-0" *ngIf="!certificateSelected">Certificate of registry must be provided.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.name">No se ha establecido el nombre del barco.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.callSign">Distintivo de llamada no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.imoNo">Número IMO no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!imoValid">Número IMO no válido.</p>
+            <p class="no-wrap mb-0" *ngIf="!mmsiValid">El número MMSI no es válido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipTypeSelected">Tipo de barco no seleccionado.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.yearOfBuild">Año de construcción no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.length || !lengthTypeSelected">Tamaño del barco no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.breadth || !breadthTypeSelected">Ancho del barco no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.power || !powerTypeSelected">Potencia del barco no establecida.</p>
+            <p class="no-wrap mb-0" *ngIf="!hullTypeSelected">Tipo de casco no seleccionado.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipStatusSelected">Estado del barco no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.height">Altura del barco no establecida.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.draught">Calado del barco no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.grossTonnage">Arqueo bruto no establecido.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipModel.deadweightTonnage">No se ha establecido el tonelaje de peso muerto.</p>
+            <p class="no-wrap mb-0" *ngIf="!shipFlagCodeSelected">Código de bandera no seleccionado.</p>
+            <p class="no-wrap mb-0" *ngIf="!contactSelected">Debe proporcionarse al menos un medio de contacto.</p>
+            <p class="no-wrap mb-0" *ngIf="!organizationSelected">Organización no seleccionada.</p>
+            <p class="no-wrap mb-0" *ngIf="!certificateSelected">Debe proporcionarse certificado de registro.</p>
           </div>
           <button class="btn btn-ssn" disabled>
             <img src="assets/images/icons/128x128/white/checkmark.png" height="24px" />{{ confirmButtonTitle }}</button>
@@ -519,10 +519,10 @@
             <table class="table table-bordered">
               <thead>
                 <tr class="bg-ssn text-ssn">
-                  <th>Ship Name</th>
-                  <th>Call Sign</th>
-                  <th>IMO Number</th>
-                  <th *ngIf="shipModel.mmsiNo">MMSI Number</th>
+                  <th>Nombre del barco</th>
+                  <th>Señal de llamada</th>
+                  <th>Número IMO</th>
+                  <th *ngIf="shipModel.mmsiNo">Número MMSI</th>
                 </tr>
               </thead>
               <tbody>
@@ -539,17 +539,17 @@
             <table class="table table-bordered">
               <thead>
                 <tr class="bg-ssn text-ssn">
-                  <th>Ship Type</th>
-                  <th>Year of Build</th>
-                  <th>Length</th>
-                  <th>Breadth</th>
-                  <th>Power</th>
-                  <th>Hull Type</th>
-                  <th>Status</th>
-                  <th>Height</th>
-                  <th>Draught</th>
-                  <th>Gross Tonnage</th>
-                  <th>Deadweight Tonnage</th>
+                  <th>Tipo de barco</th>
+                  <th>Año de construcción</th>
+                  <th>Tamaño</th>
+                  <th>Ancho</th>
+                  <th>Potencia</th>
+                  <th>Tipo de casco</th>
+                  <th>Estado</th>
+                  <th>Altura</th>
+                  <th>Calado</th>
+                  <th>Arqueo bruto</th>
+                  <th>Tonelaje de peso muerto</th>
                 </tr>
               </thead>
               <tbody>
@@ -572,12 +572,12 @@
               </tbody>
             </table>
           </div>
-          <p *ngIf="shipModel.hasSideThrusters">Ship has side thrusters.</p>
-          <p *ngIf="shipModel.hasSideThrustersFront">Ship has front side thrusters.</p>
-          <p *ngIf="shipModel.hasSideThrustersBack">Ship has back side thrusters.</p>
+          <p *ngIf="shipModel.hasSideThrusters">El barco tiene propulsores laterales.</p>
+          <p *ngIf="shipModel.hasSideThrustersFront">El barco tiene propulsores laterales delanteros.</p>
+          <p *ngIf="shipModel.hasSideThrustersBack">El barco tiene propulsores en la parte trasera.</p>
 
           <div *ngIf="shipModel.remark">
-            <span>Remark:</span>
+            <span>Observación:</span>
             <div class="card p-1 pt-3 text-left mb-3">
               <pre>{{ shipModel.remark }}</pre>
             </div>
@@ -587,9 +587,9 @@
             <table class="table table-bordered">
               <thead>
                 <tr class="bg-ssn text-ssn">
-                  <th>Country Flag</th>
-                  <th>Ship Flag Code</th>
-                  <th>Country</th>
+                  <th>Bandera del país</th>
+                  <th>Código de bandera del barco</th>
+                  <th>País</th>
                 </tr>
               </thead>
               <tbody>
@@ -610,8 +610,8 @@
             <table class="table table-bordered">
               <thead>
                 <tr class="bg-ssn text-ssn">
-                  <th>Organization Name</th>
-                  <th>Organization Number</th>
+                  <th>Nombre de la Organización</th>
+                  <th>Número de organización</th>
                 </tr>
               </thead>
               <tbody>
@@ -627,9 +627,9 @@
             <table class="table table-bordered">
               <thead>
                 <tr class="bg-ssn text-ssn">
-                  <th>Port of Registry</th>
-                  <th>Ship Registry Number</th>
-                  <th>Date of issue</th>
+                  <th>Puerto de registro</th>
+                  <th>Número de registro del barco</th>
+                  <th>Fecha de emisión</th>
                 </tr>
               </thead>
               <tbody>

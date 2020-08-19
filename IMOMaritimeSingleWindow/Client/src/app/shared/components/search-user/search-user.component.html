@@ -1,13 +1,13 @@
 <ng-template #rt let-r="result" let-t="term">
   <img src="assets/images/flags/128x128/{{r.shipFlagCode.country.twoCharCode.toLowerCase()}}.png" height="16px" />
-  <strong *ngIf="r.name">Name: </strong> {{ r.name }}
-  <strong *ngIf="r.callSign"> Call sign: </strong> {{ r.callSign }}
-  <strong *ngIf="r.imoNo"> IMO number: </strong> {{ r.imoNo }}
-  <strong *ngIf="r.mmsiNo"> MMSI number: </strong> {{ r.mmsiNo }}
+  <strong *ngIf="r.name">Nombre: </strong> {{ r.name }}
+  <strong *ngIf="r.callSign"> Señal de llamada: </strong> {{ r.callSign }}
+  <strong *ngIf="r.imoNo"> Númber IMO: </strong> {{ r.imoNo }}
+  <strong *ngIf="r.mmsiNo"> Númber MMSI: </strong> {{ r.mmsiNo }}
 </ng-template>
 
 <div class="text-center">
-  <label for="search-ship">Search using username or full name</label>
+  <label for="search-ship">Buscar usando nombre de usuario o nombre completo</label>
   <div class="row">
     <div class="col-2"></div>
     <div class="col-8">
@@ -34,11 +34,11 @@
     <div class="col-2">
       <div *ngIf="searching">
         <img class="mx-auto" src="assets/images/animations/ship.gif" height="32px">
-        <p>Searching</p>
+        <p>Buscando</p>
       </div>
       <div *ngIf="searchFailed">
         <img class="mx-auto" src="assets/images/icons/128x128/cancel.png" height="32px">
-        <p>No results</p>
+        <p>No hay resultados</p>
       </div>
     </div>
   </div>
@@ -46,5 +46,5 @@
 
 <div *ngIf="userSelected" class="text-center">
   <img class="mx-auto" src="assets/images/animations/ship.gif" height="32px">
-  <p>Loading user...</p>
+  <p>Cargando usuario ...</p>
 </div>

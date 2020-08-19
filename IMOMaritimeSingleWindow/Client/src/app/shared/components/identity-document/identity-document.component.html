@@ -5,7 +5,7 @@
 
         <div class="form-group row">
           <div class="col my-auto">
-            <label for="natureOfIdentityDoc" class="col-form-label-sm no-wrap mb-0">Nature of Identity Document</label>
+            <label for="natureOfIdentityDoc" class="col-form-label-sm no-wrap mb-0">Naturaleza del documento de identidad</label>
             <ng-select class="ng-select-placeholder-size" [items]="identityDocTypeList" [(ngModel)]="identityDocumentModel.identityDocumentType"
               name="natureOfIdentityDoc" [closeOnSelect]="true" bindLabel="description" placeholder="Nature of Identity Document"
               (change)="setIdentityDocumentType($event)">
@@ -15,12 +15,12 @@
 
         <div class="form-group row">
           <div class="col my-auto">
-            <label for="numberOfIdentityDoc" class="col-form-label-sm no-wrap mb-0">Number of Identity Document</label>
+            <label for="numberOfIdentityDoc" class="col-form-label-sm no-wrap mb-0">Número de documento de identidad</label>
             <input #numberOfIdentityDoc="ngModel" type="text" [(ngModel)]="identityDocumentModel.identityDocumentNumber" placeholder="Number of Identity Document"
               class="form-control form-control-sm" name="numberOfIdentityDoc" (ngModelChange)="setNumberOfIdentityDoc($event)">
               <div *ngIf="!identityDocumentModel.identityDocumentNumber && identityDatesRequired" class="alert alert-danger form-control-sm" role="alert">
                 <li>
-                  <small>This field is required when identity document is supplied.</small>
+                  <small>Este campo es obligatorio cuando se proporciona el documento de identidad.</small>
                 </li>
               </div>
           </div>
@@ -29,7 +29,7 @@
 
         <div class="form-group row">
           <div class="col my-auto">
-            <label for="app-search-country" class="col-form-label-sm no-wrap mb-0">Issuing Nation</label>
+            <label for="app-search-country" class="col-form-label-sm no-wrap mb-0">Nación emisora</label>
             <app-search-country *ngIf="!identityDocumentModel.issuingNation" (selectCountry)="setIssuingNation($event)" (deselectCountry)="resetIssuingNation()"></app-search-country>
             <div *ngIf="identityDocumentModel.issuingNation" class="input-group input-group-sm">
               <div class="input-group-prepend">
@@ -56,16 +56,16 @@
 
         <div class="form-group row">
           <div class="col my-auto">
-            <label for="app-date-picker" class="col-form-label-sm no-wrap mb-0">Identity Document Issue Date</label>
+            <label for="app-date-picker" class="col-form-label-sm no-wrap mb-0">Fecha de emisión del documento de identidad</label>
             <app-date-picker #selectIssueDate (dateResult)="setIdentityDocumentIssueDate($event)" [dateInput]="getNgbDateFormat(identityDocumentModel.identityDocumentIssueDate)"></app-date-picker>
             <div *ngIf="issueDateAfterExpiryDateError && expiryDateValid && issueDateValid" class="alert alert-danger" role="alert">
               <li>
-                <small>Identity document issue date must be before the expiry date.</small>
+                <small>La fecha de emisión del documento de identidad debe ser anterior a la fecha de vencimiento.</small>
               </li>
             </div>
             <div *ngIf="identityDatesRequired && !identityIssueDateSet" class="alert alert-danger form-control-sm" role="alert">
               <li>
-                <small>This field is required when identity document is supplied.</small>
+                <small>Este campo es obligatorio cuando se proporciona el documento de identidad.</small>
               </li>
             </div>
           </div>
@@ -73,16 +73,16 @@
 
         <div class="form-group row">
           <div class="col my-auto">
-            <label for="app-date-picker" class="col-form-label-sm no-wrap mb-0">Identity Document Expiry Date</label>
+            <label for="app-date-picker" class="col-form-label-sm no-wrap mb-0">Fecha de vencimiento del documento de identidad</label>
             <app-date-picker #selectExpiryDate (dateResult)="setIdentityDocumentExpiryDate($event)" [dateInput]="getNgbDateFormat(identityDocumentModel.identityDocumentExpiryDate)"></app-date-picker>
             <div *ngIf="expiryDateBeforeIssueDateError && expiryDateValid && issueDateValid" class="alert alert-danger" role="alert">
               <li>
-                <small>Identity document expiry date must be after the issue date.</small>
+                <small>La fecha de vencimiento del documento de identidad debe ser posterior a la fecha de emisión.</small>
               </li>
             </div>
             <div *ngIf="identityDatesRequired && !identityExpiryDateSet" class="alert alert-danger form-control-sm" role="alert">
               <li>
-                <small>This field is required when identity document is supplied.</small>
+                <small>Este campo es obligatorio cuando se proporciona el documento de identidad.</small>
               </li>
             </div>
           </div>
@@ -91,7 +91,7 @@
         <div *ngIf="showVisaOrResidenceNumber == true">
           <div class="form-group row">
             <div class="col my-auto">
-              <label for="visaOrResidenceNumber" class="col-form-label-sm no-wrap mb-0">Visa or Residence Permit Number</label>
+              <label for="visaOrResidenceNumber" class="col-form-label-sm no-wrap mb-0">Número de visa o permiso de residencia</label>
               <input #visaOrResidencePermitNumber="ngModel" type="text" [(ngModel)]="identityDocumentModel.visaOrResidencePermitNumber"
                 placeholder="Visa or Residence Permit Number" class="form-control form-control-sm" name="visaOrResidenceNumber"
                 (ngModelChange)="setVisaOrPermitNumber($event)">

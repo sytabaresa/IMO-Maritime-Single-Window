@@ -2,7 +2,7 @@
   <form #form="ngForm">
     <div class="row">
       <div class="col-md-6">
-        <label class="no-wrap mb-0 mt-2" for="certificate_number">Certificate Number</label>
+        <label class="no-wrap mb-0 mt-2" for="certificate_number">Número certificado</label>
         <input [(ngModel)]="isscModel.certificateNumber" class="form-control form-control-sm" id="certificate_number" name="certificate_number"
           placeholder="Enter certificate number..." (change)="touchData()">
       </div>
@@ -13,12 +13,12 @@
 
     <div class="row">
       <div class="col-md-6">
-        <label class="no-wrap mb-0" for="issuer_type_select">Issuer Type</label>
+        <label class="no-wrap mb-0" for="issuer_type_select">Tipo de emisor</label>
         <ng-select [(ngModel)]="isscModel.issuedByGovernment" name="issuer_type_select" [items]="issuerTypeList" bindLabel="name"
           bindValue="isGovernmentType" placeholder="Select issuer type..." [searchable]="false" (change)="onIssuerTypeSelection($event)"></ng-select>
       </div>
       <div class="col-md-6">
-        <label class="no-wrap mb-0" for="issc_issuer">Issued By</label>
+        <label class="no-wrap mb-0" for="issc_issuer">Emitido por</label>
         <div *ngIf="isscModel.issuedByGovernment == null">
           <select class="custom-select" placeholder="Select issuer type first" disabled></select>
         </div>

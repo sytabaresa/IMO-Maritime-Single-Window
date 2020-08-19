@@ -1,7 +1,7 @@
 <div class="card-body">
   <ng-template #rt let-r="result" let-t="term">
-    <strong *ngIf="r.name">Name: </strong> {{ r.name }}
-    <strong *ngIf="r.organizationNo">Org.no.: </strong> {{ r.organizationNo }}
+    <strong *ngIf="r.name">Nombre: </strong> {{ r.name }}
+    <strong *ngIf="r.organizationNo">No. Org.: </strong> {{ r.organizationNo }}
   </ng-template>
 
   <div class="text-center">
@@ -20,7 +20,7 @@
             placeholder="Enter search here..." (focus)="onFocus($event)" />
             <button (click)="addOrg()" class="btn btn-sm btn-ssn btn-add-org">
               <img src="assets/images/icons/128x128/white/pax.png" height="20px" />
-              Add Organization
+              Agregar organización
             </button>
         </div>
         <div *ngIf="!showDropdown" class="input-group">
@@ -36,11 +36,11 @@
       <div class="col-2">
         <div *ngIf="searching">
           <img class="mx-auto" src="assets/images/animations/pax.gif" height="32px">
-          <p>Searching</p>
+          <p>Buscando</p>
         </div>
         <div *ngIf="searchFailed">
           <img class="mx-auto" src="assets/images/icons/128x128/cancel.png" height="32px">
-          <p>No results</p>
+          <p>No hay resultados</p>
         </div>
       </div>
     </div>
@@ -48,5 +48,5 @@
 
   <div *ngIf="organizationSelected" class="text-center">
     <img class="mx-auto" src="assets/images/animations/pax.gif" height="32px">
-    <p>Loading organization...</p>
+    <p>Cargando organización ...</p>
   </div>

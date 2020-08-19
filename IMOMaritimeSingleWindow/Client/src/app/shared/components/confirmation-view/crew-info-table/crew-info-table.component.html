@@ -5,7 +5,7 @@
           <tr>
             <td class="no-wrap">
               <tr>
-                <small>No. of Crew</small>
+                <small>Número de Tripulantes</small>
               </tr>
               <tr>
                 {{ numberOfCrew }}
@@ -15,9 +15,9 @@
         </tbody>
         <div *ngIf="numberOfCrew === 0" class="text-center my-3">
             <img *ngIf="iconPath" src="{{iconPath}}warning.png" height="24px" />
-            <span class="no-wrap">Crew information</span>
-            <span class="no-wrap">is marked for delivery,</span>
-            <span class="no-wrap">but no information is provided.</span>
+            <span class="no-wrap">Información de la tripulación</span>
+            <span class="no-wrap">está marcado para entrega,</span>
+            <span class="no-wrap">pero no se proporciona información.</span>
           </div>
       </app-table-card>
     </div>

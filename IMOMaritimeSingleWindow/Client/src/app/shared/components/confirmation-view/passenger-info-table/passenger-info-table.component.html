@@ -5,7 +5,7 @@
           <tr>
             <td class="no-wrap">
               <tr>
-                <small>No. of Passengers</small>
+                <small>Número de Pasajeros</small>
               </tr>
               <tr>
                 {{ numberOfPassengers }}
@@ -13,7 +13,7 @@
             </td>
             <td class="no-wrap">
               <tr>
-                <small>No. of Passengers in Transit</small>
+                <small>Número de pasajeros en tránsito</small>
               </tr>
               <tr>
                 {{ passengersInTransit }}
@@ -23,11 +23,11 @@
         </tbody>
         <div *ngIf="numberOfPassengers === 0" class="text-center my-3">
           <img *ngIf="iconPath" src="{{iconPath}}warning.png" height="24px" />
-          <span class="no-wrap">Passenger information</span>
-          <span class="no-wrap">is marked for delivery,</span>
-          <span class="no-wrap">but no information is provided.</span>
+          <span class="no-wrap">Información del pasajero</span>
+          <span class="no-wrap">está marcado para entrega,</span>
+          <span class="no-wrap">pero no se proporciona información.</span>
         </div>
-  
+
       </app-table-card>
     </div>
   </div>

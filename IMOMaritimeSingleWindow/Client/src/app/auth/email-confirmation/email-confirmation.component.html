@@ -7,12 +7,12 @@
       <div *ngIf="emailConfirmationSuccessful">
 
         <app-ssn-card>
-            <h3>Thank you for confirming your email address.</h3>
-            <p>Now please select a password for the account created by your local administrator:</p>
+            <h3> Gracias por confirmar su dirección de correo.</h3>
+            <p> Ahora por favor seleccione una contraseña para la cuenta creada por su administrador local:</p>
         </app-ssn-card>
-  
+
         <app-password purpose="Set"></app-password>
-  
+
         <!-- <div class="row">
           <div class="col">
             <h3>You will be redirected to login page in... </h3>
@@ -22,15 +22,15 @@
           </div>
         </div> -->
       </div>
-  
+
       <app-ssn-card *ngIf="!emailConfirmationSuccessful" header="Account confirmation">
-        <p>Email confirmation unsuccessful.</p>
-        <p>This may occur if the link you've been provided has expired. Please contact your local system administrator.</p>
+        <p> Se confirmó el correo correctamente.</p>
+        <p>Esto puede ocurrir si el enlace que se le proporcionó ha caducado. Póngase en contacto con su administrador local de sistema.</p>
         <div *ngIf="errors" class="alert alert-danger" role="alert">
           <span>{{errors}}</span>
         </div>
       </app-ssn-card>
     </div>
-    
+
     </app-ssn-bg>
 </div>

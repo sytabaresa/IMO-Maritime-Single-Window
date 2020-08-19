@@ -1,6 +1,6 @@
 <ng-template #rt let-r="result" let-t="term">
   <img src="assets/images/flags/128x128/{{r.twoCharCode.toLowerCase()}}.png" height="16px" />
-  <strong *ngIf="r.name">Name: </strong> {{ r.name }}
+  <strong *ngIf="r.name">Nombre: </strong> {{ r.name }}
 </ng-template>
 
 <div *ngIf="!locationSelected" class="input-group">
@@ -15,11 +15,11 @@
 
   <div class="input-group-append" *ngIf="searching">
     <img class="mx-auto" src="assets/images/animations/location.gif" height="20px">
-    <p>Searching</p>
+    <p>buscando</p>
   </div>
   <div class="input-group-append" *ngIf="searchFailed">
     <img class="mx-auto" src="assets/images/icons/128x128/cancel.png" height="20px">
-    <p>No results</p>
+    <p>No hay resultados</p>
   </div>
 </div>
 

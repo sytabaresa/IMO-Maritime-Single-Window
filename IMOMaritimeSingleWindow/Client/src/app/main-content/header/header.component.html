@@ -7,27 +7,27 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <img src="/assets/images/logos/logo.png" height="32px" />
-        <span class="text-center text-ssn">IMO Maritime Single Window</span>
+        <span class="text-center text-ssn">Ventanilla unica marítima de la OMI</span>
       </li>
       <ng-template #singleEntry>
         <app-header-home [standAlone]="false" *ngIf="userMenuEntries.length === 1"></app-header-home>
       </ng-template>
     </ul>
 
-    <span class="badge badge-danger" *ngIf="!(online$ | async)">Internet connection lost</span>
-    <span class="badge badge-danger" *ngIf="!hasDbConnection">Connection to database lost.</span>
-    <span class="badge badge-danger" *ngIf="!hasServerConnection">Connection to server lost.</span>
+    <span class="badge badge-danger" *ngIf="!(online$ | async)">Se perdió la conexión a Internet</span>
+    <span class="badge badge-danger" *ngIf="!hasDbConnection">Se perdió la conexión a la base de datos.</span>
+    <span class="badge badge-danger" *ngIf="!hasServerConnection">Se perdió la conexión al servidor.</span>
 
     <ul class="navbar-nav ml-auto" *ngIf="loggedIn || redirected">
       <li class="nav-item" >
-          <span class="text-center text-ssn mx-3">Version 1.1. Deployed: 08.03.2019</span>
+          <span class="text-center text-ssn mx-3">Versión 1.1. Implementado: 08.03.2019</span>
           <div class="btn-group">
-            <button (click)="navigateToMyAccountPage()" class="btn btn-light btn-sm">My account</button>
+            <button (click)="navigateToMyAccountPage()" class="btn btn-light btn-sm">Mi cuenta</button>
           </div>
           <div class="btn-group">
             <span class="btn btn-light btn-sm non-clickable">{{userName}}</span>
-            <button class="btn btn-outline-light btn-sm" (click)="logout()">Log out</button>
-            <button class="btn btn-outline-light btn-sm" (click)="whatsNew()">What's new?</button>
+            <button class="btn btn-outline-light btn-sm" (click)="logout()">Cerrar sesión</button>
+            <button class="btn btn-outline-light btn-sm" (click)="whatsNew()">¿Qué hay de nuevo?</button>
           </div>
       </li>
     </ul>

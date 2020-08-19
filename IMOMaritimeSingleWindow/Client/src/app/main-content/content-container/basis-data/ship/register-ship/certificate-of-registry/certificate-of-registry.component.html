@@ -4,7 +4,7 @@
       <app-ssn-card header="Port of Registry">
         <div [hidden]="portLocationSelected">
           <div class="text-center">
-            <label for="search-location">Search using location name or UN/LOCODE code</label>
+            <label for="search-location">Buscar usando el nombre de la ubicación o el código UN/LOCODE</label>
             <div class="row">
               <div class="col-2"></div>
               <div class="col-8">
@@ -18,7 +18,7 @@
             <app-ssn-table [entryData]="locationProperties"></app-ssn-table>
           </div>
           <button class="btn btn-ssn" (click)="deselectPortLocation()">
-            <img src="assets/images/icons/128x128/white/cancel.png" height="24px" /> Clear selection</button>
+            <img src="assets/images/icons/128x128/white/cancel.png" height="24px" /> Borrar selección</button>
         </div>
       </app-ssn-card>
     </div>
@@ -30,7 +30,7 @@
         <div class="d-table-row">
           <div class="d-table-cell p-1">
             <div class="form-group">
-              <label for="eta_date_input">Date of issue</label>
+              <label for="eta_date_input">Fecha de emisión</label>
               <div class="input-group">
                 <div class="input-group-prepend">
                   <button class="btn btn-sm btn-ssn" (click)="doi.toggle()" type="button">
@@ -45,14 +45,14 @@
         </div>
         <div class="d-table-row ">
           <div *ngIf="!validCertificateDateFormat " class="alert alert-danger " role="alert ">
-            <span>Invalid date format.</span>
+            <span>Formato de fecha no válido.</span>
           </div>
         </div>
       </div>
     </div>
     <div class="col-lg-6">
       <div class="form-group row">
-        <label class="col-form-label-sm no-wrap col-sm-2 col-md-2 col-lg-3 col-xl-2" for="certificate_number">Ship registry number</label>
+        <label class="col-form-label-sm no-wrap col-sm-2 col-md-2 col-lg-3 col-xl-2" for="certificate_number">Número de registro del barco</label>
         <div class="col">
           <input [(ngModel)]="certificateModel.certificateNumber" name="certificateNumber" type="text" class="form-control form-control-sm"
             id="certificate_number" placeholder="Enter ship registry number" (ngModelChange)="persistData()" />

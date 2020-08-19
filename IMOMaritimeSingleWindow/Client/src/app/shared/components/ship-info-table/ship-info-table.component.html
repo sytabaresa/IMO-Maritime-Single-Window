@@ -10,7 +10,7 @@
         </tr>
         <tr *ngIf="entry.data">{{ entry.data }}</tr>
         <tr *ngIf="!entry.data">
-          <div class="font-italic">Not provided.</div>
+          <div class="font-italic">No provisto.</div>
         </tr>
       </td>
     </tr>
@@ -32,7 +32,7 @@
   <tbody class="text-center" *ngIf="!shipHasContactInfo">
     <div class="my-3">
       <img src="assets/images/icons/128x128/white/warning.png" height="24px">
-      <span>No contact information for this ship has been provided.</span>
+      <span>No se ha proporcionado información de contacto para este barco.</span>
     </div>
   </tbody>
 </app-table-card>

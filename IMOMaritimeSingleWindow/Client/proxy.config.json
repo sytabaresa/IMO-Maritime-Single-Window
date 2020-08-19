@@ -1,6 +1,6 @@
 {
   "/api": {
-    "target": "http://localhost:5000",
-    "secure": false
+    "target": "https://test.laplazoleta.co",
+    "secure": true
   }
 }
